@@ -1,0 +1,82 @@
+body {
+    background-color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    /* margin-right: 0%; */
+}
+
+h1, h4, main, footer {
+    text-align: center;
+    color: rgb(224, 167, 93);
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h5 {
+    font-weight: bolder;
+}
+
+main {
+    font-size: 25px;
+}
+
+footer {
+    font-size: 30px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-content: center; 
+    justify-content: center;
+    align-items: center;
+}
+.Logo {
+    max-width: 100px;
+    max-height: 100px;
+    display: flex;
+    align-content: flex-start;
+}
+
+#fotos-productos {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "producto1 producto2"
+    "producto3 producto4";
+    row-gap: 25px;
+    column-gap: 100px;
+    margin: 5% auto;
+    width: fit-content;
+} 
+
+#producto1 {
+    grid-area: producto1;
+}
+
+#producto2 {
+    grid-area: producto2;
+}
+
+#producto3 {
+    grid-area: producto3;
+}
+
+#producto4 {
+    grid-area: producto4;
+}
+
+.card{
+    margin: 20px ;
+}
