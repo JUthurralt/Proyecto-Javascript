@@ -80,3 +80,9 @@ header {
 .card{
     margin: 20px ;
 }
+
+#total-carrito{
+    color: rgb(224, 167, 93);
+    text-align: center;
+    font-size: 25px;
+}
