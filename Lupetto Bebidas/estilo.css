@@ -27,13 +27,14 @@ h5 {
 
 main {
     font-size: 25px;
+    
 }
 
 footer {
     font-size: 30px;
 }
 
-header {
+.header {
     display: flex;
     flex-direction: column;
     align-content: center; 
@@ -85,4 +86,46 @@ header {
     color: rgb(224, 167, 93);
     text-align: center;
     font-size: 25px;
+    margin-bottom: 15px;
+}
+
+label {
+    color: rgb(224, 167, 93);
+}
+
+#formulario {
+    text-align: center;
+    margin: 15px 0px;
+}
+
+#carrito {
+position: absolute;
+top: 90px;
+right: 0;
+margin-right: 15px;
+}
+
+.bi-cart3 {
+    color:rgb(224, 167, 93);
+}
+
+.bi-cart3:hover {
+    color: grey;
+}
+
+table, th, td {
+    border:1px solid white;
+    }
+
+  table {
+    width: 50%;
+    color: rgb(224, 167, 93);
+    text-align: center;
+  }
+
+.contenedorTabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }

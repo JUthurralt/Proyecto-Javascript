@@ -3,6 +3,17 @@ function sumarPrecioAlTotal(producto) {
     total += producto.precio;
 }
 
+function tabla(valorSeleccionado, total) {
+    $("#tabla").append(`<tr>
+    <td>${valorSeleccionado.id}</td>
+    <td>${valorSeleccionado.tipo}</td>
+    <td>${valorSeleccionado.precio}</td>
+    <td>${total}</td>
+    <td><button class="borrar" value="${valorSeleccionado.id}">X</button></td>
+    </tr>`)
+}
+
+// function logIn()
 
 class Producto{
     constructor(marca, tipo, precio, img, id) {
@@ -16,7 +27,7 @@ class Producto{
         console.log("Agregaste "+ this.tipo + ", a un precio de " + this.precio);
     }
 }
-const producto1 = new Producto("Johnnie Walker", "Whisky", 6500, "Imagenes/Whisky.jpeg", 1);
+const producto1 = new Producto("Johnnie Walker", "Whisky", 6500, "Imagenes/Whisky.png", 1);
 const producto2 = new Producto("Beefeater", "Gin", 3500, "Imagenes/Gin.jpeg", 2);
 const producto3 = new Producto("Bacardi", "Ron", 2900, "Imagenes/Ron.jpeg", 3);
 const producto4 = new Producto("Boris ACDC", "Cerveza", 450, "Imagenes/Cerveza.jpeg", 4);
@@ -117,6 +128,7 @@ contenedorProductos.innerHTML = seccionProducto;
 let botones = document.getElementsByClassName("card-link");
 console.log(botones);
 
+
 for (const boton of botones){
     boton.addEventListener("click", function (e){
         e.stopImmediatePropagation();
@@ -125,10 +137,38 @@ for (const boton of botones){
         console.log(carrito);
         total += valorSeleccionado.precio;
         console.log(total);
-        // carritoPrueba(total)
-        })
-        ;
+        tabla(valorSeleccionado, total);
+       
+        let botonesBorrar = document.getElementsByClassName("borrar");
+        for (const botonesB of botonesBorrar){
+            botonesB.addEventListener("click", function(e){
+                botonesB.parentNode.parentNode.remove();
+            })
+        }   
+    })
+          
 }
+// FORMULARIO
+
+
+
+
+$("#enviar").click(()=> {
+
+// let enviar = document.getElementById("enviar");
+// enviar.addEventListener("click", function(e){
+    e.preventDefault();
+
+    let usuario = document.getElementById("user").value;
+    localStorage.setItem("nombreUsuario", JSON.stringify(usuario));
+    
+    let contra = document.getElementById("pwd").value;
+    localStorage.setItem("contrasenia", JSON.stringify(contra));
+
+    
+    console.log(JSON.parse(localStorage.getItem("nombreUsuario")));
+    console.log(JSON.parse(localStorage.getItem("contrasenia")));
+})
 
 // COMPLEMENTARIO CLASE 9
 function carritoPrueba(total) {
@@ -138,11 +178,26 @@ let p = document.createElement("p");
 p.innerHTML=`<p>El total de su compra es $${total}</p>`;
 totalCarrito.appendChild(p);
 }
-
-let botonFinalizar = document.getElementById("finalizarCompra");
-botonFinalizar.addEventListener("click", function (e){
+$("#finalizarCompra").click(function(e){
     carritoPrueba(total);
-});
+})
+// let botonFinalizar = document.getElementById("finalizarCompra");
+// botonFinalizar.addEventListener("click", function (e){
+//     carritoPrueba(total);
+// });
+
+// TABLA
+
+
+
+
+
+
+
+
+
+
+
 
 
 
