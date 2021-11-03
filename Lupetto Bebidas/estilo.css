@@ -4,7 +4,7 @@ body {
     font-weight: normal;
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
-    text-transform: capitalize;
+    text-transform: initial;
     /* margin-right: 0%; */
 }
 
@@ -128,4 +128,30 @@ table, th, td {
     justify-content: center;
     align-items: center;
    
+}
+
+#clickCarrito {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.alert { 
+    max-width: 30%;
+}
+
+#cartel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#registro {
+    text-align: center;
+    color: rgb(224, 167, 93);
+    font-size: 20px;
 }
