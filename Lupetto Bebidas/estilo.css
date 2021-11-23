@@ -1,157 +1,198 @@
 body {
-    background-color: black;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    text-transform: initial;
-    /* margin-right: 0%; */
+  background-color: black;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  text-transform: initial;
 }
 
-h1, h4, main, footer {
-    text-align: center;
-    color: rgb(224, 167, 93);
+h1,
+h4,
+main,
+footer {
+  text-align: center;
+  color: rgb(224, 167, 93);
 }
 
 h1 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 h4 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 h5 {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 main {
-    font-size: 25px;
-    
+  font-size: 25px;
 }
 
 footer {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-content: center; 
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 .Logo {
-    max-width: 100px;
-    max-height: 100px;
-    display: flex;
-    align-content: flex-start;
+  max-width: 100px;
+  max-height: 100px;
+  display: flex;
+  align-content: flex-start;
 }
 
 #fotos-productos {
-    display: grid;
-    text-align: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
     "producto1 producto2"
     "producto3 producto4";
-    row-gap: 25px;
-    column-gap: 100px;
-    margin: 5% auto;
-    width: fit-content;
-} 
+  row-gap: 25px;
+  column-gap: 100px;
+  margin: 5% auto;
+  width: fit-content;
+}
 
 #producto1 {
-    grid-area: producto1;
+  grid-area: producto1;
 }
 
 #producto2 {
-    grid-area: producto2;
+  grid-area: producto2;
 }
 
 #producto3 {
-    grid-area: producto3;
+  grid-area: producto3;
 }
 
 #producto4 {
-    grid-area: producto4;
+  grid-area: producto4;
 }
 
-.card{
-    margin: 20px ;
+.card {
+  margin: 20px;
 }
 
-#total-carrito{
-    color: rgb(224, 167, 93);
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 15px;
+#total-carrito {
+  color: rgb(224, 167, 93);
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 15px;
 }
 
 label {
-    color: rgb(224, 167, 93);
+  color: rgb(224, 167, 93);
 }
 
 #formulario {
-    text-align: center;
-    margin: 15px 0px;
+  text-align: center;
+  margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  height: 695px;
+  margin: 10px;
+  background-color: brown;
+  background-image: url("./Imagenes/form-img.jpg");
+  background-position: center;
+  background-size: contain;
+  align-items: center;
+  position: relative;
+  margin-left: 30%;
+}
+
+.form-group {
+  margin-top: 15px;
+}
+
+button {
+  width: fit-content;
+  color: rgb(224, 167, 93);
+  background: transparent;
+  border: 2px solid rgb(224, 167, 93);
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: rgb(224, 167, 93);
+  color: white;
+}
+
+.contenedorBotonesForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 #carrito {
-position: absolute;
-top: 90px;
-right: 0;
-margin-right: 15px;
+  position: absolute;
+  top: 90px;
+  right: 0;
+  margin-right: 15px;
 }
 
 .bi-cart3 {
-    color:rgb(224, 167, 93);
+  color: rgb(224, 167, 93);
 }
 
 .bi-cart3:hover {
-    color: grey;
+  color: grey;
 }
 
-table, th, td {
-    border:1px solid white;
-    }
+table,
+th,
+td {
+  border: 1px solid white;
+}
+th {
+  background-color: rgb(224, 167, 93);
+  color: white;
+}
+table {
+  width: 50%;
+  color: rgb(224, 167, 93);
+  text-align: center;
+  border-radius: 6px;
+}
 
-  table {
-    width: 50%;
-    color: rgb(224, 167, 93);
-    text-align: center;
-  }
-
-.contenedorTabla{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
+.contenedorTabla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #clickCarrito {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.alert { 
-    max-width: 30%;
+.alert {
+  max-width: 30%;
 }
 
 #cartel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #registro {
-    text-align: center;
-    color: rgb(224, 167, 93);
-    font-size: 20px;
+  text-align: center;
+  color: rgb(224, 167, 93);
+  font-size: 20px;
 }

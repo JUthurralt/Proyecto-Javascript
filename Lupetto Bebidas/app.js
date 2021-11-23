@@ -3,10 +3,9 @@ function sumarPrecioAlTotal(producto) {
   total += producto.precio;
 }
 
-function tabla(valorSeleccionado, newTotal) {
+function tabla(valorSeleccionado, total) {
   $("#tabla").append(`
     <tr>
-    <td>1</td>
     <td>${valorSeleccionado.tipo}</td>
     <td>${valorSeleccionado.precio}</td>
     <td class="td">${total}</td>
@@ -18,7 +17,13 @@ function actualizarTotal() {
   for (const td1 of td) td1.innerText = `${total}`;
 }
 
-// function logIn()}
+function carritoPrueba(total) {
+  let totalCarrito = document.getElementById("total-carrito");
+  console.log(totalCarrito);
+  let p = document.createElement("p");
+  p.innerHTML = `<p>El total de su compra es $${total}</p>`;
+  totalCarrito.appendChild(p);
+}
 
 class Producto {
   constructor(marca, tipo, precio, img, id) {
@@ -62,6 +67,7 @@ let carrito = [];
 
 let seccionProducto = "";
 let contenedorProductos = document.getElementById("fotos-productos");
+console.log(contenedorProductos)
 
 productosArray.forEach((element) => {
   seccionProducto += `<div id="producto${element.id}" class="card" style="width: 18rem;">
@@ -93,7 +99,7 @@ for (const boton of botones) {
     remover.innerHTML = `<p class="p">${valorSeleccionado.tipo} se agregó al carrito.</p>`;
 
     $("#cartel").css("display", "flex");
-    $("#cartel").slideUp(4000);
+    $("#cartel").slideUp(1000);
 
     let botonesBorrar = document.getElementsByClassName("borrar");
     for (const botonesB of botonesBorrar) {
@@ -133,40 +139,28 @@ $.ajax({
       $("#registro").append(`<p>Gracias por registrarse, ${respuesta.nombre}. Le llegarán nuestras a ofertas a ${respuesta.mail}.</p>`)
   }
 });
+
+$("#formulario").css("display", "none");
+$("#fotos-productos").css("filter", "blur(0px)")
+$(".navbar").css("filter", "blur(0px)")
 })
 
-
-
-
-
-
-
-
-
-
-// COMPLEMENTARIO CLASE 9
-function carritoPrueba(total) {
-  let totalCarrito = document.getElementById("total-carrito");
-  console.log(totalCarrito);
-  let p = document.createElement("p");
-  p.innerHTML = `<p>El total de su compra es $${total}</p>`;
-  totalCarrito.appendChild(p);
-}
 $("#finalizarCompra").click(function (e) {
   carritoPrueba(total);
 });
-// let botonFinalizar = document.getElementById("finalizarCompra");
-// botonFinalizar.addEventListener("click", function (e){
-//     carritoPrueba(total);
-// });
 
 $("#clickCarrito").click(function (e) {
   if (clicks == 0) {
-    $(".contenedorTabla").slideDown(1000);
     $(".contenedorTabla").css("display", "flex");
+    $("#fotos-productos").css("filter", "blur(5px)")
     clicks++;
+    console.log(carrito)
   } else {
-    $(".contenedorTabla").slideUp(1000);
+    $("#fotos-productos").css("filter", "blur(0px)")
+    $(".contenedorTabla").css("display", "none");
     clicks--;
   }
 });
+
+
+

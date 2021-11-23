@@ -23,7 +23,6 @@
       </div>
         <div id="carrito">
             <button id="clickCarrito">
-              <a href="#contenedorTabla"></a>
               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
               </svg>
@@ -33,7 +32,7 @@
       </header>
 
     
-    <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-center" style="filter: blur(5px)">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link text-light fs-3" href="#inicio">Inicio</a>
@@ -47,13 +46,25 @@
         </ul>
       </nav>
 
-      <form id="formulario">
-        <label for="username" class="usuario">Usuario:</label>
-        <input type="text" id="user" name="username">
+      <form action="/action_page.php" class="was-validated" id="formulario">
+
+        <div class="mb-3 mt-3">
+          <label for="uname" class="form-label">Usuario:</label>
+          <input type="text" class="form-control" id="user" placeholder="Ingrese su usuario" name="uname" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Por favor, complete este campo.</div>
+        </div>
+      <div class="mb-3 mt-3">
         <label for="text" class="mail">Mail:</label>
-        <input type="text" id="email" name="mail">
+        <input type="text" class="form-control" id="email" placeholder="Ingrese su mail" name="mail" required>
+        <div class="valid-feedback">Valido.</div>
+        <div class="invalid-feedback">Por favor, complete este campo.</div>
+      </div>
+
+        <div class="contenedorBotonesForm">
+        <button type="reset" id="borrar">Limpiar</button>
         <button type="submit" id="enviar">Registrarse</button>
-        <button type="reset" id="borrar">Reestablecer</button>
+      </div>
       </form>
 
       <div id="registro">
@@ -64,7 +75,6 @@
       <table id="tabla">
         <tbody>
           <tr>
-          <th>Cantidad</th>
           <th>Producto</th>
           <th>Subtotal</th>
           <th>Total</th>
@@ -79,17 +89,12 @@
     </div>
   </div>
 
-    <main id="fotos-productos">
+    <main id="fotos-productos" style="filter: blur(5px)">
     </main>
 
     <div id="total-carrito">
       <button id="finalizarCompra">Finalizar Compra</button>
     </div>
-
-
-
-
-
 
     <footer class="bg-dark">
         <div id="contacto">
